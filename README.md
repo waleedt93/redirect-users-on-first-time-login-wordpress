@@ -2,6 +2,7 @@
 # Use below functions in your activated theme's functions.php
 
 //Whenever a new user is created, this function will add a custom field with value 1.
+
 function function_new_user($user_id) { 
    add_user_meta( $user_id, '_new_user', '1' );
 }
