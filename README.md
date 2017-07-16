@@ -2,14 +2,12 @@
 # Use below functions in your activated theme's functions.php
 
 //Whenever a new user is created, this function will add a custom field with value 1.
-
 function function_new_user($user_id) { 
    add_user_meta( $user_id, '_new_user', '1' );
 }
 add_action( 'user_register', 'function_new_user');
 
 //The next function will check if it's the first login and redirect the user.
-
 function function_check_login_redirect($user_login, $user) {
    $logincontrol = get_user_meta($user->ID, '_new_user', 'TRUE');
    if ( $logincontrol ) {
